@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-NAME = ../server
+NAME = server
 CFLAGS = -Wall -Wextra -Werror -g
 SRCS =	server
 SRC_DIR = ./sources/

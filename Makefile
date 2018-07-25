@@ -8,27 +8,27 @@ LIBFT_DIR = ./libft
 
 LIBFT = $(addprefix $(LIBFT_DIR), libft.a)
 
-all: $(LIBFT) $(SERVER) $(CLIENT)
+all: $(LIBFT) $(SERVER) #$(CLIENT)
 
 $(SERVER): $(LIBFT)
 	make -C $(SERVER_DIR)
 
-$(CLIENT): $(LIBFT)
-	make -C $(CLIENT_DIR)
+#$(CLIENT): $(LIBFT)
+#	make -C $(CLIENT_DIR)
 
 $(LIBFT):
 	make -C $(LIBFT_DIR)
 
 clean:
 	make -C $(SERVER_DIR) clean
-	make -C $(CLIENT_DIR) clean
+#	make -C $(CLIENT_DIR) clean
 	make -C $(LIBFT_DIR) clean
 
 fclean: clean
-	rm -f $(CLIENT)
+#	rm -f $(CLIENT)
 	rm -f $(SERVER)
 	make -C $(SERVER_DIR) fclean
-	make -C $(CLIENT_DIR) fclean
+#	make -C $(CLIENT_DIR) fclean
 	make -C $(LIBFT_DIR) fclean
 re: fclean all
 

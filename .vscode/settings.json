@@ -1,5 +1,8 @@
 {
 	"files.associations": {
-		"ft_p.h": "c"
+		"ft_p.h": "c",
+		"inet.h": "c",
+		"types.h": "c",
+		"unistd.h": "c"
 	}
 }

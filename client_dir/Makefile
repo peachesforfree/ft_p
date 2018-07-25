@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-NAME = ../client
+NAME = client
 CFLAGS = -Wall -Wextra -Werror -g
 SRCS =	client
 SRC_DIR = ./sources/
@@ -19,10 +19,10 @@ obj:
 	mkdir -p $(OBJ_DIR)
 
 $(OBJ_DIR)%.o:$(SRC_DIR)%.c
-	gcc -g -Wall -Werror -Wextra -c -I $(LIBFT_DIR)libft.h -I includes  -o $@ -c $<
+	gcc -g -Wall -Werror -Wextra -c -I$(LIBFT_DIR)libft.h -Iincludes  -o $@ -c $<
 
 $(NAME): $(OBJ)
-	gcc -g -shared -ldl $(LIBFT) $(OBJ) -o $(NAME)
+	gcc -g $(LIBFT) $(OBJ) -o $(NAME)
 
 clean:
 	rm -rf $(OBJ_DIR)

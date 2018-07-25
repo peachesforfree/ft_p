@@ -1,4 +1,4 @@
-#include "ft_p.h"
+#include "../includes/ft_p.h"
 
 void	usage(char *str)
 {
@@ -28,7 +28,7 @@ int		create_server(int port)
 	return (sock);
 }
 
-int main(int argc, char **argv)
+int		main(int argc, char **argv)
 {
 	int					port;
 	int					sock;
@@ -43,7 +43,10 @@ int main(int argc, char **argv)
 	port = atoi(argv[1]);
 	sock = create_server(port);
 
+printf("Creating server\n");
 	cs = accept(sock, (struct sockaddr*)&csin, &cslen);
+printf("Accepted connection\n");
+//send a message?
 	while ((r = read(cs, buf, 1023)) > 0)
 	{
 		buf[r] = '\0';
